@@ -8,8 +8,8 @@
     <title>market place</title>
 </head>
 <body>
-    <h1>This is marketPlace</h1>
-    <hr>
+<h1>BUYSELL | <a href="/login">Sing in</a></h1><hr>
+<hr>
 <h4>Market place from KG</h4>
 
     <form action="/" method="get">
