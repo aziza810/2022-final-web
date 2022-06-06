@@ -1,43 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>market place</title>
-</head>
-<body>
-<h1>BUYSELL | <a href="/login">Sing in</a></h1><hr>
-<hr>
-<h4>Market place from KG</h4>
-
-    <form action="/" method="get">
-        Search by title of product: <input type="text" name="title"><br>
-        <input type="submit" value="search">
-    </form>
-    
-    <#list products as product>
-        <div>
-            <p><b>${product.title}</b> ${product.price} KGS. | <a href="/product/${product.id}">Подробнее...</a></p>
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
+    <h1 style="text-align: center">Search products</h1><hr>
+    <form method="get" action="/">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="searchWord">Search by name of product</label>
+                <input type="text" name="searchWord" <#if searchWord??>value="${searchWord}"</#if> class="form-control"
+                       id="searchWord">
+            </div>
+            <button style="width: 100%" type="submit" class="btn btn-dark">search</button>
         </div>
-        <#else>
-        <h3>There is no products</h3>
-    </#list>
-
-    <hr>
-    <h3>add new product</h3>
-    <form action="/product/create" method="post" enctype="multipart/form-data">
-        Name of product: <input type="text" name="title"/><br><br>
-        Description: <input type="text" name="description"/><br><br>
-        Price: <input type="text" name="price"/><br><br>
-        City: <input type="text" name="city"/><br><br>
-        Author: <input type="text" name="author"/><br><br>
-        First image: <input type="file" name="file1"/><br><br>
-        Second image: <input type="file" name="file2"/><br><br>
-        Third image: <input type="file" name="file3"/><br><br>
-        <input type="submit" value="add product"/>
     </form>
+    <hr>
+    <div class="card-columns">
+        <#list products as product>
+            <a href="/product/${product.id}" class="product-link">
+                <div class="card text-white bg-dark my-3 product">
 
-</body>
-</html>
+                    <img src="/images/${product.previewImageId}"
+                         class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text">${product.price} ₽</p>
+                    </div>
+                    <div class="card-footer">
+                        ${product.city}
+                    </div>
+                </div>
+            </a>
+        <#else>
+            <h1 style="text-align: center">there is nothing</h1>
+        </#list>
+    </div>
+</@t.template>
