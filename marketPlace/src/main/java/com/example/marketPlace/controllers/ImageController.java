@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.ByteArrayInputStream;
 
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 public class ImageController {
     private final ImageRepository imageRepository;
 
