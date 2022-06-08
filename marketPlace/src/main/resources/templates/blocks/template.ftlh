@@ -15,9 +15,10 @@
         <title>Market place</title>
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark ">
         <div class="container-fluid">
             <a href="/">
+                <img class="pull-right" src="/static/images/Ala-Too.png" width="100" height="100" >
                 <span class="navbar-brand mb-0 h1">Market place from KG</span>
             </a>
             <#if user.email??>
