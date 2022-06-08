@@ -13,7 +13,7 @@
 
 # Deployed to Heroku
 
-### [Heroku](https://aziza-final-web.herokuapp.com/)
+### [Heroku](https://aziza-web-final-2022.herokuapp.com/)
 
 ---
 # Getting started
