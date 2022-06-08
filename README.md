@@ -23,8 +23,8 @@ These instructions will get you a copy of the project up and running on your loc
 This is a project written using Java 11, Spring Boot
 
 1. Clone the repository
-```
-2. Setup Database in application properties(create your own database, change user and password)
+2. 
+3. Setup Database in application properties(create your own database, change user and password)
 
 3. Run class with @SpringBootApplication annotation 
 
